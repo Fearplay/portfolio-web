@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Grid Layout with Collapsible Navbar</title>
+    <style>
+        body, h1, p, nav, a, button {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        .grid-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Creates two columns */
+        grid-gap: 10px;
+        padding: 10px;
+    }
+        nav {
+            display: flex;
+        flex-wrap: wrap;
+            grid-column: 1 / -1; /* Full width */
+            background: #333;
+            color: #fff;
+            display: flex;
+        }
+        nav a {
+            padding: 15px 20px;
+            text-decoration: none;
+            color: white;
+            flex-grow: 1;
+            text-align: center;
+            display: block;
+        }
+        nav a:hover, .dropdown:hover .dropbtn {
+            background-color: #555;
+        }
+        .box {
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+        }
+        .red { background-color: red; }
+        .blue { background-color: blue; }
+        .green { background-color: green; }
+        .yellow { background-color: yellow; color: black; }
+        .dropdown {
+            display: none;
+            position: relative;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        .dropdown-content a:hover {background-color: #f1f1f1}
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropbtn {
+            background-color: #333;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        @media screen and (max-width: 600px) {
+        .grid-container {
+            grid-template-columns: 1fr; /* Switches to a single column layout */
+        }
+        nav, .dropdown {
+            grid-column: 1 / -1; /* Ensures full width */
+        }
+    }
+
+    .box, .content, footer {
+        grid-column: 1 / -1; /* Full width for single items */
+    }
+    .content {
+        order: 5; /* Positions the main content after the boxes */
+    }
+
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="dropdown">
+            <button class="dropbtn">Menu</button>
+            <div class="dropdown-content">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </nav>
+        <div class="box red">Red Box</div>
+        <div class="box blue">Blue Box</div>
+        <div class="box green">Green Box</div>
+        <div class="box yellow">Yellow Box</div>
+        <div class="content">
+            <h1>Welcome</h1>
+            <p>This is a responsive page using CSS Grid. The navigation bar stretches across the top, and the content adjusts based on the screen size.</p>
+        </div>
+        <footer>
+            Footer Content Here
+        </footer>
+    </div>
+</body>
+</html>
