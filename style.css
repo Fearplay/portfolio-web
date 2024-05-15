@@ -1,6 +1,6 @@
 /* style.css */
 body {
-    background-color: #374A67;
+    background-color: #F5F5F5;
 }
 
 section {
@@ -12,8 +12,8 @@ section:last-child {
 }
 
 .nav-link {
-    background-color: #90AA86;
-    color: black;
+    background-color: #1E3A8A;
+    color: white;
     text-align: center;
     border-radius: 10px;
     transition: background-color 0.5 s;
@@ -24,20 +24,18 @@ section:last-child {
     color: white;
 }
 
-
-
 .nav-item {
     padding-right: 10px;
     flex: 1 0 auto;
 }
 
 a {
-    color: #279AF1;
+    color: #FF7043;
     text-decoration: none;
 }
 
 a:hover {
-    color: #11151C;
+    color: #1E3A8A;
 }
 
 .skills {
@@ -50,16 +48,6 @@ li {
     font-size: 2rem;
 }
 
-footer>ul>li>a {
-    background-color: #0C7C59 !important;
-    color: white !important;
-}
-
-footer>ul>li>a:hover {
-    background-color: #132A13 !important;
-    color: white !important;
-
-}
 
 @media (min-width: 1980px) {
 
@@ -112,7 +100,6 @@ footer>ul>li>a:hover {
     }
 }
 
-/* Zajistit, že prvek s třídou .col-xxxl-* bude správně zarovnán a rozložen */
 .row>[class^="col-xxxl-"],
 .row>[class*=" col-xxxl-"] {
     position: relative;
